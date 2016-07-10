@@ -19,6 +19,6 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
     if [[ -n $line ]]
     then
         echo $line
-        python bbgDownloadIntradayBar.py -s"$line" > $OUTPUTFOLDER/"$(echo $line | awk '{print $1}')".txt
+        python bbgDownloadIntradayBar.py -s"$line" > $OUTPUTFOLDER/"$(echo $line | awk '{print $1}')".csv
     fi
 done < "$securityList"
