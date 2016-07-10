@@ -9,7 +9,7 @@ else
     securityList=$1
 fi
 
-OUTPUTFOLDER=$(date +'%Y%m%d')
+OUTPUTFOLDER=$(date +'%Y%m%d')"_GMT"
 if [[ ! -d $OUTPUTFOLDER ]]
 then
     mkdir $OUTPUTFOLDER
