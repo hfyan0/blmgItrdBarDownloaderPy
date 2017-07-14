@@ -89,6 +89,11 @@ def parseCmdLine():
                       help="gapFillInitialBar",
                       action="store_true",
                       default=False)
+    parser.add_option("--adjusted",
+                      dest="adjustedprice",
+                      help="adjusted price",
+                      metavar = "adjustedprice",
+                      default=False)
 
     (options, args) = parser.parse_args()
 
@@ -134,6 +139,10 @@ def sendIntradayBarRequest(session, options):
     request.set("security", options.security)
     request.set("eventType", options.event)
     request.set("interval", options.barInterval)
+    
+    request.set("adjustmentNormal", options.adjustedprice); 
+    request.set("adjustmentAbnormal", options.adjustedprice); 
+    request.set("adjustmentSplit", options.adjustedprice);
 
     # All times are in GMT
     if not options.startDateTime or not options.endDateTime:
