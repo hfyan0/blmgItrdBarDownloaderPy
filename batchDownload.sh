@@ -21,6 +21,6 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
         echo $line
         ADJ="false"
         # ADJ="true"
-        python bbgDownloadIntradayBar.py -s"$line" --adjusted $ADJ > $OUTPUTFOLDER/"$(echo $line | awk '{print $1}')".csv
+        python2 bbgDownloadIntradayBar.py -s"$line" --adjusted $ADJ > $OUTPUTFOLDER/"$(echo $line | awk '{print $1}')".csv
     fi
 done < "$securityList"

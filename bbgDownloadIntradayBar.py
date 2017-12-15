@@ -49,13 +49,15 @@ def parseCmdLine():
                       dest="host",
                       help="server name or IP (default: %default)",
                       metavar="ipAddress",
-                      default="192.168.91.28")
+                      # default="192.168.91.28")
+                      default="192.168.91.172")
     parser.add_option("-p",
                       dest="port",
                       type="int",
                       help="server port (default: %default)",
                       metavar="tcpPort",
-                      default=8194)
+                      default=10194)
+                      # default=8194)
     parser.add_option("-s",
                       dest="security",
                       help="security (default: %default)",
